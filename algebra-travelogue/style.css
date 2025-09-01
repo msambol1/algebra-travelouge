@@ -1,0 +1,567 @@
+/*
+
+Typography
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+  /*Animations*/
+
+  @keyframes fade-in{
+    0%{
+        opacity:0;
+        }
+    100%{
+        opacity:1;
+            }
+    }
+  .fade-in {
+    animation:fade-in 1s linear;
+    animation-fill-mode: both;
+  }
+
+  .delay-1 {
+    animation-delay: 1s;
+  }
+  .delay-0 {
+    animation-delay:0s;
+  }
+  .delay-300 {
+    animation-delay:0.3s;
+  }
+
+  .delay-600 {
+    animation-delay:0.6s;
+  }
+
+  .delay-900 {
+    animation-delay:0.9s;
+  }
+  .delay-1200 {
+    animation-delay:1.2s
+  }
+ .fade-in.staggered > *{
+    animation:fade-in 1s linear;
+    animation-fill-mode: both;
+ }
+  .fade-in.staggered > *:nth-child(2){
+        animation-delay: 0.5s;
+  }
+  .fade-in.staggered > *:nth-child(3){
+    animation-delay: 1s;
+}
+.fade-in.staggered > *:nth-child(4){
+    animation-delay: 1.5s;
+}
+.fade-in.staggered > *:nth-child(5){
+    animation-delay: 2s;
+}
+
+.fade-in.staggered > *:nth-child(n+6){
+    animation-delay: 12.5s;
+}
+
+
+@keyframes slide-in-left{
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    100%{
+        transform: translate(0);
+        opacity: 1;
+
+    }
+}
+
+.slide-in-left{
+
+    animation:slide-in-left 1s linear;
+    animation-fill-mode: both;
+}
+.slide-in-left.staggered > *{
+    animation:slide-in-left 1s linear;
+    animation-fill-mode: both;
+}
+
+
+.slide-in-left.staggered>*:nth-child(1){
+    animation-delay: 0s;
+}
+.slide-in-left.staggered>*:nth-child(2){
+    animation-delay: 2s;
+}
+
+.slide-in-left.staggered>*:nth-child(3){
+    animation-delay: 3s;
+}
+.slide-in-left.staggered>*:nth-child(4){
+    animation-delay: 5s;
+}
+
+.h1 {
+    font-family: Rubik, sans-serif;
+    font-weight: 700;
+    font-size:32px;
+    line-height: 125%;
+}
+.h2 {
+    font-family: Rubik, sans-serif;
+    font-weight:500;
+    font-size:24px;
+    line-height: 125%;
+
+}
+.p {
+    font-family: Rubik, sans-serif;
+    font-weight:300;
+    font-size:16px;
+    line-height: 150%;
+}
+
+.em{
+    font-family: Rubik, sans-serif;
+    font-weight:400;
+    font-size:16px;
+    line-height: 150%;
+}
+
+.small{
+    font-family: Rubik, sans-serif;
+    font-weight:300;
+    font-size:12px;
+    line-height: 150%;
+}
+.highlight{
+    font-family: Rubik, sans-serif;
+    font-weight: 300;
+    font-size:32px;
+    line-height: 150%;
+
+}
+.highlight-subtitle{
+    font-family: Rubik,sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height:200%;
+}
+.text-button{
+    font-family: Rubik, sans-serif;
+    font-size:16px;
+    font-weight: 300;
+    line-height: 100%;
+}
+
+
+/*
+
+Colors
+
+*/
+.color-primary{
+    color:#50AD9C;
+
+}
+
+.color-text{
+    color: #1a1a1a;;
+
+}
+.color-text-muted{
+    color:#808080;
+
+}
+.color-gray-light{
+    color:#eee;
+
+}
+.bg-color-primary{
+    color:#50AD9C;
+}
+.bg-color-text{
+    color: #1a1a1a;;
+
+}
+.bg-color-text-muted{
+    color:#808080;
+
+}
+.bg-color-gray-light{
+    color:#eee;
+}
+.bg-color-button{
+    background-color: #e6e6e6;;
+}
+
+/*
+
+Link styles
+
+*/
+a.active{
+    color:#50AD9C;
+    text-decoration: underline;
+}
+a {
+    transition: transform 0.3s cubic-bezier(0.85, 0, 0.15, 1),
+      color 0.3s linear 0.3s;
+  }
+  a:hover {
+    color: red;
+    transform: scale(1.2) rotate(360deg);
+    /*transform-origin:center -1px; mijenjanje ishodišta transformacije*/
+  }
+
+
+/*
+
+Header navigation styles 
+
+*/
+/*kod inline elemenata možemo koristiti text-align*/
+/*.navigation {
+    text-align: center;
+
+
+}
+.navigation-item{
+    margin-left: 32px;
+}
+.navigation-item:first-child{
+    margin-left:0;
+}
+/*
+ili
+.navigation-item:first-child:nth-child(n+2){
+margin-left:32px;
+}*/
+.navigation{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap:32px;
+}
+
+
+
+/*
+
+Logo styles
+
+*/
+.logo{
+    height:64px;
+    width:auto;
+    display: inline-block;
+}
+/*- tekst-align:center; funkcionira kod roditeljskog diva i inline elemenata
+ - width i height ne funkcioniraju kod inline elemenata*/
+
+ /*
+ 
+ Header styles
+ 
+ */
+
+  /* - selektiraj mi header i unutar njega navigaciju*
+      - margine se stavljaju preko roditelja jer je on odgovoran za dijete */
+ 
+ /*.header{
+    margin-top:80px;
+    margin-bottom:80px;
+
+      }
+ .header .navigation{
+    margin-top:16px;
+ }
+*/
+.header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:16px;
+}
+
+ /*
+ 
+ Footer styles
+  
+ */
+ .footer{
+    text-align: center;
+ }
+
+ /*
+ 
+ Feature styles
+
+ */
+.feature{
+    display:flex;
+    flex-direction: column;
+    gap:16px;
+
+}
+
+.feature-metadata{
+    display: flex;
+    flex-direction: row;
+    gap:8px;
+
+}
+.feature-metadata-item:nth-child(n+2)::before{
+    content: "-";
+    margin-right: 8px;
+    }
+
+.feature-article{
+        padding-left:16px;
+    }
+.feature-article-title{
+    
+        font-family: Rubik, sans-serif;
+        font-weight:300;
+        font-size:48px;
+        line-height: 125%;
+}
+.feature-article-title::after{
+    content: "-";
+    }
+    
+.feature-article-title-bold{
+    
+        font-family: Rubik, sans-serif;
+        font-weight:700;
+        font-size:48px;
+        line-height: 125%;
+    }
+
+/*.feature-metadata{
+    margin-top:16px;
+}
+
+.feature-title{
+    margin-top:16px;
+}*/
+/*Selektiraj mi element počevši od drugog elementa te mi ispred dodaj - */
+ /*.feature-metadata-item:nth-child(n+2)::before{
+    content: '-';
+    margin:0 8px;
+
+ }
+        */
+
+ a.feature-metadata-item{
+    font-weight: 400;
+ }
+ .feture-image{
+    display: block;
+    width:100%;
+    aspect-ratio:1120/630;
+    object-fit: cover;
+     }
+
+/*
+ .wrapper{
+    max-width: 1120px;
+    margin:0 auto;
+    margin-top:80px;
+ }*/
+
+ .wrapper{
+    max-width:1120px;
+    margin:80px auto;
+    display: flex;
+    flex-direction: column;
+    gap:80px;
+ }
+ /*
+
+ Main
+ 
+ */
+
+ .main{
+    display: flex;
+    flex-direction: column;
+    gap:80px;
+ }
+ /*
+ 
+ 
+ Article styles
+ 
+ */
+
+ .article{
+    display: flex;
+    flex-direction: row;
+    gap:24px;
+
+
+}
+.article-content{
+
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+
+}
+
+.articles{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+
+}
+
+/*
+
+Newsletter
+
+*/
+
+.newsletter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:128px;
+    padding: 40px 192px 40px 92px;
+    background-color: #f6f6f6;
+}
+.newsletter-content{
+    display: flex;
+    flex-direction: column;
+    gap:14.5px;
+
+    /* Form styles - česta praksa je dovavanje boje i fontova direktno na input
+    
+    npr.
+
+    input[type="text"],
+    input{type=email}, button{
+
+        width:100%;
+        height:48px;
+        padding:16px 8px;
+        font-family: Rubik, sans-serif;
+        font-size:16px;
+        font-weight: 300;
+        line-height: 100%;
+        text-align:center;
+
+
+}
+    input[type="text"],
+    input{type=email}{
+    width:100px;
+    height:48px;
+    padding:8px 16px;
+    background-color:#e6e6e6;
+    color:#808080;
+
+
+    }
+
+.newsletter-form{
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+    }
+
+button{
+
+background-color:transparent;
+color:#5B0ad9c;
+border:2px solid #50ad9c;
+font-family:Rubik, sans-serif;
+}
+.newsletter .newsletter-form{
+flex-grow:0;
+flex-shrink:0;
+width:352px;
+}
+
+   
+    */
+}
+.newsletter-buttons{
+   display: flex;
+   flex-direction: column;
+   gap:8px;
+   text-align: center;
+
+ 
+}
+.newsleetter-button{
+    display: block-inline;
+    padding:16px 8px 16px 8px;
+    width:352px;
+    height:48px;
+}
+
+button.newsleetter-button {
+    border:solid #50AD9C;
+    color:#50AD9C;
+}
+
+
+/*
+
+Transformation and trasiontion
+
+*/
+
+.image-box {
+    overflow: hidden;       /* sprječava da slika izađe iz okvira */
+    border: 2px solid #ccc; /* okvir */
+    border-radius: 10px;    /* zaobljeni rubovi (opcija) */
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* zadržava proporcije */
+    transition: transform 0.5s ease; /* glatki zoom */
+  }
+  
+  .image-box:hover img {
+    transform: scale(1.2);  /* povećanje slike za 20% */
+  }
+
+
+  /* Pagination*/
+
+  .pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width:376px;
+    width:100%;
+    height: 32px;
+    gap:16px;
+    margin:0 auto;
+    border: solid;
+  }
+
+  .pagination-item-text{
+
+    font-family: Rubik, sans-serif;
+    font-size:16px;
+    font-weight: 300;
+    line-height: 100%;
+    color: #1a1a1a;
+  }
+
+  .pagination-item-text-bold{
+    font-family: Rubik, sans-serif;
+    font-size:16px;
+    font-weight: 700;
+    line-height: 100%;
+    color: #50AD9C;
+    
+  }
+
